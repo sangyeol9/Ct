@@ -16,19 +16,26 @@ public class test {
 		
 	}
 
-class Solution {
-    public int solution(String t, String p) {
-          int count =0;
-	    int pl = p.length();
-	       for(int i=0;t.length()-i>=pl;i++) {   
-	    			  if( t.substring(i, i+pl ).compareTo(p)<=0) {
-	    				 count++; 
-	    			  }
-	       }
-	        
-	     
-	        return count;
+	class Solution {
+	    public int solution(int n) {
+	      		int answer =1;
+		    	for(int i=3;i<=Math.sqrt(n);i++) {
+	                int count = 0;
+	               if(i%2 != 0) {
+	                   
+	                   for(int j=2;j<=i;j++){
+	                        if(count==2) break;
+	                        if(i%j == 0) count ++;
+	                   } 
+	                   if(count == 1 ) answer++;
+	               }
+	               
+		    		
+	                
+		    	}
+		    	
+		        return answer;
 	    }
-}
+	}
 }
 
