@@ -17,25 +17,27 @@ public class test {
 	}
 
 	class Solution {
-	    public int solution(int n) {
-	      		int answer =1;
-		    	for(int i=3;i<=Math.sqrt(n);i++) {
-	                int count = 0;
-	               if(i%2 != 0) {
-	                   
-	                   for(int j=2;j<=i;j++){
-	                        if(count==2) break;
-	                        if(i%j == 0) count ++;
-	                   } 
-	                   if(count == 1 ) answer++;
-	               }
-	               
-		    		
-	                
-		    	}
-		    	
-		        return answer;
+	    public int solution(int k, int m, int[] score) {
+	        for(int i=0;i<score.length-1;i++) {
+	        	if(score[i] < score[i+1]) {
+	        		int temp = score[i];
+	        		score[i] = score[i+1];
+	        		score[i+1] = temp;
+	        	}
+	        }
+	        int a = 0;
+	        int result =0;
+	        for(int i=0; i<score.length/m;i++) {
+	        	int temp = k;
+	        	if(score[a] < k) {
+	        		temp = score[a];
+	        	}
+	        }
+	        
+	        
+	        return result;
 	    }
+	
 	}
 }
 
