@@ -30,24 +30,15 @@ public class test {
 	}
 
 	class Solution {
-	    public int solution(int number, int limit, int power) {
+	    public int solution(int[] nums) {
+	    	Map<String, Object> map = new HashMap<>();
 	    	
-	    	int result =0;
-	    	for(int i=1;i<=number/2;i++) {
-	    		int count =0;
-	    		
-	    		for(int j=1;j<=i;j++) {
-	    			if(i % j == 0) {
-	    				count ++;
-	    			}	
-	    			if(count>limit) {
-	    				count = power;
-	    				break;
-	    			}
-	    		}
-	    		
-	    		
-	    		result += count;
+	    	for(int i=0;i<nums.length;i++) {
+	    		map.put(String.valueOf(nums[i]), i);
+	    	}
+	    	int result = nums.length/2;
+	    	if(map.size() < result) {
+	    		result = map.size();
 	    	}
 	    	
 	        return result;
