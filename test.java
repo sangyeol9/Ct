@@ -1,11 +1,5 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 import java.util.Scanner;
 
 public class test {
@@ -30,17 +24,13 @@ public class test {
 	}
 
 	class Solution {
-	    public int solution(int[] nums) {
-	    	Map<String, Object> map = new HashMap<>();
-	    	
-	    	for(int i=0;i<nums.length;i++) {
-	    		map.put(String.valueOf(nums[i]), i);
+	    public int solution(int a, int b, int n) {
+	    	int result = 0;
+	    	while(n>=a) {
+	    		int newc = (n/a)*b;
+	    		result += newc;
+	    		
 	    	}
-	    	int result = nums.length/2;
-	    	if(map.size() < result) {
-	    		result = map.size();
-	    	}
-	    	
 	        return result;
 	    }
 	}
