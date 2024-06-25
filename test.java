@@ -1,8 +1,12 @@
 package test;
 
+import java.time.DayOfWeek;
+import java.time.Month;
+import java.time.MonthDay;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -30,18 +34,33 @@ public class test {
 	}
 
 	class Solution {
-	    public int solution(int[] nums) {
-	    	Map<String, Object> map = new HashMap<>();
-	    	
-	    	for(int i=0;i<nums.length;i++) {
-	    		map.put(String.valueOf(nums[i]), i);
-	    	}
-	    	int result = nums.length/2;
-	    	if(map.size() < result) {
-	    		result = map.size();
-	    	}
-	    	
-	        return result;
+	    public String solution(int a, int b) {
+	        
+	        int [] days = {31,29,31,30,31,30,31,31,30,31,30,31};
+	        int temp =0;
+	        for(int i=1;i<a;i++) {
+	        	temp += days[i-1];
+	        }
+	        temp += b;
+	        int result = temp%7;
+	        String day = "";
+	        if(result == 1) {
+	        	day = "FRI";
+	        }else if(result==2) {
+	        	day = "SAT";
+	        }else if(result==3) {
+	        	day = "SUN";
+	        }else if(result==4) {
+	        	day = "MON";
+	        }else if(result==5) {
+	        	day = "TUE";
+	        }else if(result==6) {
+	        	day = "WED";
+	        }else if(result==0) {
+	        	day = "THU";
+	        }
+	        
+	        return day;
 	    }
 	}
 }
